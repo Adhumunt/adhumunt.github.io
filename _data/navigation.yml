@@ -1,0 +1,26 @@
+header:
+  - titles:
+      en      : &EN       Github
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+    url: github.com/Adhumunt
+
+  - titles:
+      en      : &EN       About
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+    url: /about.html
+
+# Sidebar Navigation
+
+docs-en:
+  - title:      Discussions of theoretical physics and mathematics
+    children:
+      - title:  Archive
+        url:    /archive.html
+      - title: About
+        url:    /about.html
