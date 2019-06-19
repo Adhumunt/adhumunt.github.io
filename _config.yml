@@ -201,7 +201,7 @@ defaults:
     values:
       layout: article
       sharing: true
-      license: true
+      license: false
       category: post
       aside:
         toc: true
