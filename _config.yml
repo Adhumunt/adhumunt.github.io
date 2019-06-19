@@ -205,10 +205,10 @@ defaults:
       category: post
       aside:
         toc: true
-      sidebar:
-        nav: docs-en
-      show_edit_on_github: true
-      show_subscribe: true
+      #sidebar:
+      #  nav: docs-en
+      show_edit_on_github: false
+      show_subscribe: false
       pageview: true
  
 ## => Plugins
