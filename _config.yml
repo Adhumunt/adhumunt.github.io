@@ -192,6 +192,7 @@ defaults:
       articles:
         type: brief
         show_info: true
+        show_excerpt: true
         excerpt_type: html
   ## posts
   - scope:
