@@ -1,19 +1,8 @@
 header:
-  - titles:
-      en      : &EN       Github
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-    url: github.com/Adhumunt
-
-  - titles:
-      en      : &EN       About
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-    url: /about.html
+  - title: Github
+    url: https://github.com/Adhumunt
+  - title: About
+     url: /about.html
 
 # Sidebar Navigation
 
