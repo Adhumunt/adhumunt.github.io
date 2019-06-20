@@ -192,6 +192,9 @@ defaults:
       articles:
         type: item
         show_info: true
+        show_cover: false
+        show_excerpt: true
+        show_readmore: false
         excerpt_type: html
   ## posts
   - scope:
