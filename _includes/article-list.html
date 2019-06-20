@@ -79,6 +79,7 @@
         </div>
       </article>
 
+
     {%- elsif include.type == 'brief' -%}
       {%- assign _tags = '' -%}
       {%- for _tag in _article.tags -%}
@@ -103,10 +104,8 @@
           {%- if include.show_info -%}
             <span class="item__meta">{{ _article.date | date: __return }}</span>
           {%- endif -%}
-          <a itemprop="headline" class="item__header" href="{{ _article_url }}">{{ _article.title }}</a>
-        </div>
+          <a itemprop="headline" class="item__header" href="{{ _article_url }}">{{ _article.title }}</a></div>
       </li>
-
 
     {%- elsif include.type == 'grid' -%}
       {%- if include.size == 'sm' -%}
