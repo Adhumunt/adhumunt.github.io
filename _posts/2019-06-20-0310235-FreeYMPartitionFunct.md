@@ -17,22 +17,17 @@ The original (partial) derivation may be found in [paper](https://arxiv.org/abs/
 ## The Large $N$ Partition Function for Single Trace States with $k$ Oscillators
 
 The large $N$ limit of the partition of single-trace trace with $k$ oscillators is analytically provided by
+
 $$
 \begin{align*}
 \mathcal{Z}_{\text{ST}} = -\sum_{q=1}^\infty\frac{\varphi(q)}{q}\ln(1-z(x^q))
 \end{align*}
 $$
+
 where $\varphi(q)$ is Euler's totient function. The majority of the heavy lifting in the upcoming proof comes from careful algebraic manipulations of the totient function. In that spirit, we will enter a brief discourse into the properties of said function.
 
 ### Euler's Totient Function
 
-Here we will outline several properties and proofs regarding the totient function. Our goal, by the end of this section, is to prove the following statement;
-
-
-$$
-\begin{align*}
-	\sum_{q|k}\varphi(q) = k
-\end{align*}
-$$
+Here we will outline several properties and proofs regarding the totient function. Our goal, by the end of this section, is to prove the following statement; $$ \sum_{q|k}\varphi(q) = k. $$ 
 {:.success}
 
