@@ -105,19 +105,8 @@
           {%- endif -%}
           <a itemprop="headline" class="item__header" href="{{ _article_url }}">{{ _article.title }}</a>
         </div>
+        
       </li>
-      <div class="item__description">
-          {%- if _article.excerpt and include.show_excerpt -%}
-            <div class="article__content" itemprop="description articleBody">
-              {%- if _excerpt_type == 'html' -%}
-                {{ _article.excerpt }}
-              {%- else -%}
-                {{ _article.excerpt | strip_html | strip | truncate: _excerpt_truncate }}
-              {%- endif -%}
-            </div>
-          {%- endif -%}
-        </div>
-      </div>
 
     {%- elsif include.type == 'grid' -%}
       {%- if include.size == 'sm' -%}
