@@ -98,6 +98,7 @@
         {%- endif -%}
       {%- endif -%}
       {%- include snippets/get-locale-string.html key='ARTICLE_LIST_DATE_FORMAT' -%}
+      <div class="item__content">
       <li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="{{ _tags }}">
         <div class="item__content">
           {%- if include.show_info -%}
@@ -126,7 +127,7 @@
           {%- assign _show_pageview = __return -%}
           {%- include article-info.html article=_article show_pageview=_show_pageview -%}
         {%- endif -%}
-
+      </div>
 
     {%- elsif include.type == 'grid' -%}
       {%- if include.size == 'sm' -%}
