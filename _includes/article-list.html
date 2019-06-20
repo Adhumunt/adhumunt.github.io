@@ -79,7 +79,6 @@
         </div>
       </article>
 
-
     {%- elsif include.type == 'brief' -%}
       {%- assign _tags = '' -%}
       {%- for _tag in _article.tags -%}
@@ -104,7 +103,20 @@
           {%- if include.show_info -%}
             <span class="item__meta">{{ _article.date | date: __return }}</span>
           {%- endif -%}
-          <a itemprop="headline" class="item__header" href="{{ _article_url }}">{{ _article.title }}</a></div>
+          <a itemprop="headline" class="item__header" href="{{ _article_url }}">{{ _article.title }}</a>
+        </div>
+        <div class="item__description">
+            {%- if _article.excerpt and include.show_excerpt -%}
+              <div class="article__content" itemprop="description articleBody">
+                {%- if _excerpt_type == 'html' -%}
+                  {{ _article.excerpt }}
+                {%- else -%}
+                  {{ _article.excerpt | strip_html | strip | truncate: _excerpt_truncate }}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
       </li>
 
     {%- elsif include.type == 'grid' -%}
