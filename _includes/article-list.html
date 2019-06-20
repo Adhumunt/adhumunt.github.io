@@ -105,6 +105,8 @@
           {%- endif -%}
           <a itemprop="headline" class="item__header" href="{{ _article_url }}">{{ _article.title }}</a>
         </div>
+      </li>
+      <li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="{{ _tags }}">
         <div class="item__description">
             {%- if _article.excerpt and include.show_excerpt -%}
               <div class="article__content" itemprop="description articleBody">
