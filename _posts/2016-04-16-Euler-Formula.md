@@ -1,12 +1,12 @@
 Around 1740, Leonard Euler discovered a formula that connected functions of complex arguments to trigonometric functions, effectively forming a link between analytic functions and geometric functions which eventually extended to topology, differential equations, and mathematical physics. All of this began with one simple formula, lauded by Richard Feynman as "the most remarkable formula in mathematics," and it is
 
-$$e^{ix}=\cos(x)+i\sin(x), \text{ with } x\in\mathbb{R}. $$
+$$e^{ix}=\cos(x)+i\sin(x), \text{ with } x\in\mathbb{R}.\notag$$
 
 <!--more-->
 
 Here, we aim to prove the above formula. In 1702, Johann Bernoulli discovered the relationship
 
-$\displaystyle \frac{1}{1+x^2} = \frac{1}{(1+ix)(1-ix)} =\frac{1}{2}\left(\frac{1}{1+ix}+\frac{1}{1-ix}\right),$
+$$\frac{1}{1+x^2} = \frac{1}{(1+ix)(1-ix)} =\frac{1}{2}\left(\frac{1}{1+ix}+\frac{1}{1-ix}\right),\notag$$
 
 which was instrumental for Gauss as mathematicians at the time were unable to solve the integral
 
