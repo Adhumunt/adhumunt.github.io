@@ -190,9 +190,8 @@ defaults:
     values:
       layout: articles
       articles:
-        type: brief
+        type: item
         show_info: true
-        show_excerpt: true
         excerpt_type: html
   ## posts
   - scope:
