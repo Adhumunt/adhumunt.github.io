@@ -109,10 +109,10 @@
       <li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="{{ _tags }}">
         <div class="item__content">
           <div class="item__description">
-             {%- if include.show_info -%}
+            {%- if _article.excerpt and include.show_excerpt -%}
+            {%- if include.show_info -%}
               <span class="item__meta">{{ _article.date | date: __return }}</span>
             {%- endif -%}
-            {%- if _article.excerpt and include.show_excerpt -%}
               <div class="article__content" itemprop="description articleBody">
                 {%- if _excerpt_type == 'html' -%}
                   {{ _article.excerpt }}
