@@ -111,7 +111,7 @@
           {%- if include.show_info -%}
             <span class="item__meta">{{ _article.date | date: __return }}</span>
           {%- endif -%}
-          <p itemprop="description articleBody" class="article__content">
+          <p class="article__content">
             {%- if _excerpt_type == 'html' -%}
                   {{ _article.excerpt }}
                 {%- else -%}
