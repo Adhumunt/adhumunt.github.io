@@ -56,8 +56,8 @@ layout: page
       {%- assign _excerpt_type = page.articles.excerpt_type | default: layout.articles.excerpt_type -%}
 
       {%- include article-list.html articles=_articles type='brief'  
-      	show_excerpt=_show_excerpt excerpt_type=_excerpt_type
-        show_info=_show_info -%}
+      	show_excerpt=_show_excerpt excerpt_type=true
+        show_info=true -%}
 
     {%- else -%}
       {%- include snippets/assign.html
