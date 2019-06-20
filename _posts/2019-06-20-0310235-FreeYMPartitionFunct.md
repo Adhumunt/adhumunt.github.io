@@ -4,7 +4,9 @@ tags: Educational
 ---
 This post is largely a derivation of the partition function for a free Yang-Mills theory on a compact space; 
 
-$$\ln(\mathcal{Z}) = - \sum_{k=1}^\infty \ln(1-z_B(x^k)+(-1)^kz_F(x^k)).\notag$$
+$$
+\ln(\mathcal{Z}) = - \sum_{k=1}^\infty \ln(1-z_B(x^k)+(-1)^kz_F(x^k)).\notag
+$$
 
 The original (partial) derivation may be found in [paper](https://arxiv.org/abs/hep-th/0310285). We expound upon the details in this article.
 
@@ -28,6 +30,13 @@ where $\varphi(q)$ is Euler's totient function. The majority of the heavy liftin
 
 ### Euler's Totient Function
 
-Here we will outline several properties and proofs regarding the totient function. Our goal, by the end of this section, is to prove the following statement; $$ \sum_{q|k}\varphi(q) = k. $$ 
-{:.success}
+Here we will outline several properties and proofs regarding the totient function.
+{:.info}
+
+Our goal, by the end of this section, is to prove the following statement; 
+
+$$
+\sum_{q|k}\varphi(q) = k. 
+$$ 
+
 
