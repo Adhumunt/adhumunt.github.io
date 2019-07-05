@@ -5,7 +5,7 @@
   padding-top: map-get($spacers, 3);
   margin: map-get($spacers, 4) 0 map-get($spacers, 3) 0;
   word-wrap: break-word;
-  @include split-line(top, 4px);
+  @include split-line(top, 2px);
   & > .previous, & > .next {
     width: 50%;
     & > span {

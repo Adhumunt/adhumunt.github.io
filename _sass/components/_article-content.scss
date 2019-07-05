@@ -46,7 +46,7 @@
     padding-left: map-get($spacers, 3);
     font-size: map-get($base, font-size-sm);
     color: $text-color-l;
-    @include split-line(left, 4px, $border-color);
+    @include split-line(left, 3px, $border-color);
     p {
       margin: map-get($spacers, 2) 0;
     }

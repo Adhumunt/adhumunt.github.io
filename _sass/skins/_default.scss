@@ -1,7 +1,6 @@
 ///
 // Skin: Default
-// Author: Tian Qi
-// Email: kitian616@outlook.com
+// Author: Tian Qi (+ Aditya Dhumuntarao)
 ///
 
 // main colors
@@ -26,7 +25,7 @@ $background-color: #fff;
 // text colors
 $text-color-theme-light-d: #000;
 $text-color-theme-light:   #222;
-$text-color-theme-light-l: #888;
+$text-color-theme-light-l: #555;
 
 $text-color-theme-dark-d:  #fff;
 $text-color-theme-dark:    rgba(#fff, .95);
@@ -46,8 +45,8 @@ $footer-text-color: $text-color-4;
 $footer-background: $main-color-4;
 
 // border and shadow colors
-$border-color:     mix(#000, $background-color, 20%);
-$border-color-l:   mix(#000, $background-color, 10%);
+$border-color:     mix(#FFF, $main-color-1, 5%);
+$border-color-l:   mix(#000, $main-color-4, 10%);
 $decorate-color:   rgba(#000, .1);
 $mask-color:       rgba(#000, .9);
 $select-color:     rgba($main-color-1, .5);
