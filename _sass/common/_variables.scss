@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap');
+
 $base: (
-  font-family:            (-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif),
-  font-family-code:       (Menlo, Monaco, Consolas, Andale Mono, lucida console, Courier New, monospace),
+  font-family:               (Libre Baskerville, serif),
+  font-family-code:          (Menlo, Monaco, Consolas, Andale Mono, lucida console, Courier New, monospace),
 
   font-size-root:         16px,
   font-size-root-sm:      14px,
@@ -26,11 +28,11 @@ $base: (
   font-size-h6-lg:        1.25rem,
 
   font-size-h1:           2.5rem,
-  font-size-h2:           1.9rem,
-  font-size-h3:           1.5rem,
-  font-size-h4:           1.2rem,
+  font-size-h2:           1.5rem,
+  font-size-h3:           1.3rem,
+  font-size-h4:           1.1rem,
   font-size-h5:           1rem,
-  font-size-h6:           1rem,
+  font-size-h6:           .8rem,
 
   font-size-h1-sm:        2rem,
   font-size-h2-sm:        1.5rem,

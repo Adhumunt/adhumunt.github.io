@@ -12,9 +12,9 @@ text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : adhumunt.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : Geodesic
+title   : Anamorphous
 description: > # this means to ignore newlines until "Language & timezone"
-  Discussions in theoretical physics and mathematics.
+  Studying advances in theoretical physics and mathematics.
 
 
 ## => Language and Timezone
@@ -40,6 +40,7 @@ author:
 ##############################
 repository: adhumunt/adhumunt.github.io
 repository_tree: master
+
 
 ## => Paths
 ##############################
@@ -184,19 +185,6 @@ exclude:
   - /vendor
 
 defaults:
-  ## home
-  - scope:
-      path: ""
-    values:
-      layout: articles
-      articles:
-        type: item
-        show_info: true
-        show_cover: false
-        show_excerpt: true
-        show_readmore: false
-        excerpt_type: html
-  ## posts
   - scope:
       path: ""
       type: posts
@@ -204,15 +192,12 @@ defaults:
       layout: article
       sharing: true
       license: false
-      category: post
       aside:
         toc: true
-      #sidebar:
-      #  nav: docs-en
-      show_edit_on_github: false
-      show_subscribe: false
+      show_edit_on_github: true
+      show_subscribe: true
       pageview: true
- 
+
 ## => Plugins
 ##############################
 plugins:

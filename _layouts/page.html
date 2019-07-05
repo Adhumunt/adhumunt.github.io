@@ -181,6 +181,16 @@ layout: base
         {%- if _full_width == false -%}
           <div class ="main">
         {%- endif -%}
+            <div>
+              {%- if _article_header_type == 'overlay' or page.article_header == false -%}
+                  {%- include article-header.html article=page html=false -%}
+                  {%- include article-info.html article=page html=false -%}
+                {%- else -%}
+                  {%- include article-header.html article=page -%}
+                  {%- include article-info.html article=page -%}
+                {%- endif -%}
+            </div>
+                
             <div class="grid grid--reverse">
 
               <div class="col-aside d-print-none js-col-aside">
@@ -199,14 +209,6 @@ layout: base
                   <article itemscope itemtype="http://schema.org/WebPage">
                 {%- else -%}
                   <article>
-                {%- endif -%}
-
-                {%- if _article_header_type == 'overlay' or page.article_header == false -%}
-                  {%- include article-header.html article=page html=false -%}
-                  {%- include article-info.html article=page html=false -%}
-                {%- else -%}
-                  {%- include article-header.html article=page -%}
-                  {%- include article-info.html article=page -%}
                 {%- endif -%}
 
                     <div class="js-article-content">{{ content }}</div>

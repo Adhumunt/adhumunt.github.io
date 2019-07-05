@@ -1,6 +1,9 @@
 ---
 title: Partition Function for a Free Yang-Mills Theory on a Compact Space
 tags: Educational
+date: 2019-06-20
+author: Aditya Dhumuntarao
+arxiv: 0310235
 ---
 This post is largely a derivation of the partition function for a free Yang-Mills theory on a compact space; 
 
