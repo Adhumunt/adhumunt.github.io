@@ -1,8 +1,9 @@
 ---
 date: 2019-07-08
 tags: Educational ar$\chi$iv:0301235
-cover: /_posts/2019-07-08-FreeYM-PartitionFunct/BBE1B6DF-A170-4702-8539-30306CC0E896-4b7e3e50-b1ec-4323-9c69-3f2434e17d5f.jpeg
+cover: /posts/2019-07-08-FreeYM-PartitionFunct/BBE1B6DF-A170-4702-8539-30306CC0E896-4b7e3e50-b1ec-4323-9c69-3f2434e17d5f.jpeg
 ---
+
 # Partition Function for a Free Yang-Mills on a Compact Space
 
 This post is largely a derivation of the partition function for a free Yang-Mills theory on a compact space;
