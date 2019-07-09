@@ -1,7 +1,7 @@
 ---
 date: 2019-07-08
 tags: Educational ar$\chi$iv:0301235
-title: Partition Function for a Free Yang-Mills Theory on a Compact Space
+cover: /_posts/2019-07-08-FreeYM-PartitionFunct/BBE1B6DF-A170-4702-8539-30306CC0E896-4b7e3e50-b1ec-4323-9c69-3f2434e17d5f.jpeg
 ---
 # Partition Function for a Free Yang-Mills on a Compact Space
 
@@ -11,7 +11,7 @@ $$\ln(\mathcal{Z}) = - \sum_{k=1}^\infty\ln(1-z_B(x^k)+(-1)^kz_F(x^k))$$
 
 The original (partial) derivation may be found in [paper](https://arxiv.org/abs/hep-th/0310285). We expound upon the details in this article.
 
----
+<!--more-->
 
 ## Building the Partition Function
 
