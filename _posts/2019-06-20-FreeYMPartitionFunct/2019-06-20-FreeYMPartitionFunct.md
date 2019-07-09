@@ -1,5 +1,5 @@
 ---
-title: Partition Function for a Free Yang-Mills on a Compact Space
+title: Partition Function for a Free Yang-Mills Theory on a Compact Space
 date: 2019-07-08
 tags: Educational ar$\chi$iv:0301235
 ---
