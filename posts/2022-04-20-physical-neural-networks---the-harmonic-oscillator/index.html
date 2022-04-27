@@ -435,21 +435,67 @@
 
   
   
+    <div class="my-1 text-xs text-neutral-500 dark:text-neutral-400 ">
+      
+        
+      
+        
+      
+    </div>
+  
 
 
       </div>
     </header>
     <section class="flex flex-col max-w-full mt-0 prose lg:flex-row dark:prose-invert">
       
+        <div class="order-first px-0 lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8 lg:order-last">
+          <div class="ltr:pl-5 rtl:pr-5 toc lg:sticky lg:top-10 print:hidden">
+            <details open class="mt-0 overflow-hidden rounded-lg rtl:pr-5 ltr:pl-5 ltr:-ml-5 rtl:-mr-5 lg:mt-3">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer rtl:pr-5 ltr:pl-5 ltr:-ml-5 rtl:-mr-5 text-neutral-800 dark:text-neutral-100 lg:hidden bg-neutral-100 dark:bg-neutral-700"
+  >
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted ltr:border-l rtl:border-r rtl:pr-5 ltr:pl-5 ltr:-ml-5 rtl:-mr-5 border-neutral-300 dark:border-neutral-600"
+  >
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#theory">Theory</a></li>
+    <li><a href="#applications">Applications</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+          </div>
+        </div>
+      
       <div class="min-w-0 min-h-0 max-w-prose">
         <p>
 
 
 
-  <figure>
-    <img class="my-0 rounded-md" src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/master/images/NNvsExact.png" alt="NNvsExact" />
+  
+  
     
-  </figure>
+  
+  
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        srcset="
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_330x0_resize_box_3.png 330w,
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_660x0_resize_box_3.png 660w,
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_1024x0_resize_box_3.png 1024w,
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_1320x0_resize_box_3.png 2x"
+        src="/img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_660x0_resize_box_3.png"
+        alt="NNvsExact"
+      />
+      
+    </figure>
+  
 
 </p>
 <p>I&rsquo;ve been really interested in machine learning and neural networks in the context of physics recently. When I came across Ben Moseley&rsquo;s post on <em><strong><a href="https://benmoseley.blog/my-research/so-what-is-a-physics-informed-neural-network/">Physics Informed Neural Networks</a></strong></em>, I instantly knew what I was going to be doing this afternoon &ndash; I wanted to implement neural networks using <em><strong>Mathematica</strong></em> to solve a simple problem, the Harmonic Oscillator. As Sidney Coleman once said,</p>
@@ -463,7 +509,31 @@
 <p>subject to some initial data \((\chi(0)=\xi,\chi&rsquo;(0)=\zeta)\). Of course, any budding physicist knows there is an exact solution</p>
 <p>$$\begin{equation*}\chi(t) = \frac{\zeta}{\omega}\sin(\omega t) + \xi\cos(\omega t)\end{equation*}$$</p>
 <p>which has a straightforward wave-like behavior plotted below for a representative set of solutions.</p>
-<img src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/master/images/xSHOmotion.png" alt="image" />
+<p>
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        srcset="
+          /img/xSHOmotion_hu83c0c6ff706a92017dca1025ae365205_90030_330x0_resize_box_3.png 330w,
+          /img/xSHOmotion_hu83c0c6ff706a92017dca1025ae365205_90030_660x0_resize_box_3.png 660w,
+          /img/xSHOmotion_hu83c0c6ff706a92017dca1025ae365205_90030_1024x0_resize_box_3.png 1024w,
+          /img/xSHOmotion_hu83c0c6ff706a92017dca1025ae365205_90030_1320x0_resize_box_3.png 2x"
+        src="/img/xSHOmotion_hu83c0c6ff706a92017dca1025ae365205_90030_660x0_resize_box_3.png"
+        alt="xSHOmotion.png"
+      />
+      
+    </figure>
+  
+
+</p>
 <h2 id="applications" class="relative group">Applications <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#applications" aria-label="Anchor">#</a></span></h2>
 <p>Now, we turn to the problem of constructing neural networks with Mathematica architecture in order to learn harmonic motion directly. We will train the network for the parameters and the domain</p>
 <p>$$\begin{equation*}[\xi=1,\zeta=0,\omega=3;\ t_{\rm sample}\in(0,\pi)]\end{equation*}$$</p>
@@ -479,15 +549,25 @@
 
   
   
+    
+  
   
     <figure>
-      <img class="my-0 rounded-md" src="../sphere.png" alt="Image of a sphere" />
+      <img
+        class="my-0 rounded-md"
+        srcset="
+          /img/SHOTraining_hu9ece8faa08b5155e8e10278653bf6b1c_20491_330x0_resize_box_3.png 330w,
+          /img/SHOTraining_hu9ece8faa08b5155e8e10278653bf6b1c_20491_660x0_resize_box_3.png 660w,
+          /img/SHOTraining_hu9ece8faa08b5155e8e10278653bf6b1c_20491_1024x0_resize_box_3.png 1024w,
+          /img/SHOTraining_hu9ece8faa08b5155e8e10278653bf6b1c_20491_1320x0_resize_box_3.png 2x"
+        src="/img/SHOTraining_hu9ece8faa08b5155e8e10278653bf6b1c_20491_660x0_resize_box_3.png"
+        alt="SHOTraining"
+      />
       
     </figure>
   
 
 </p>
-<img src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/master/images/SHOTraining.png" alt="image" />
 <p><strong>Now</strong>, construct a neural network with <em><strong><a href="https://reference.wolfram.com/language/ref/NetChain.html">NetChain</a></strong></em>. I chose a NN with 5 hidden layers, and 1 input/output layer respectively. The model uses different types of <em><strong><a href="https://reference.wolfram.com/language/ref/ElementwiseLayer.html">ElementwiseLayer</a></strong></em>, such as <em>IntegerParts</em>, <em>Tanh</em>, and <em>LogisticSigmoid</em>, to train the network. I found that this was best for convergence.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NetChain</span><span class="p">[{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="n">Tanh</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="n">LogisticSigmoid</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}]</span><span class="w">
 </span></span></span></code></pre></div><p>The five entries provided in NetChain define functions only on the hidden layer. <strong>Finally</strong>, we can train the model with NetTrain.</p>
@@ -500,9 +580,20 @@
 
   
   
+    
+  
   
     <figure>
-      <img class="my-0 rounded-md" src="NNvsExact" alt="NNvsExact" />
+      <img
+        class="my-0 rounded-md"
+        srcset="
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_330x0_resize_box_3.png 330w,
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_660x0_resize_box_3.png 660w,
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_1024x0_resize_box_3.png 1024w,
+          /img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_1320x0_resize_box_3.png 2x"
+        src="/img/NNvsExact_hufbedff321ecf2f6d020752f8ec55539c_67714_660x0_resize_box_3.png"
+        alt="NNvsExact"
+      />
       
     </figure>
   
