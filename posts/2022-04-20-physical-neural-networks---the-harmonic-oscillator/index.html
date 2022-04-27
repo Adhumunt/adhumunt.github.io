@@ -105,7 +105,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "537"
+    "wordCount": "533"
   }]
   </script>
 
@@ -473,7 +473,21 @@
 </span></span></span></code></pre></div><p><strong>Next</strong>, gather some training data.  I chose about 30 points to train the neural network (NN).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Simplify</span><span class="p">[</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">Table</span><span class="p">[</span><span class="n">t</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Oscillator</span><span class="p">[</span><span class="n">t</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">\</span><span class="p">[</span><span class="n">Pi</span><span class="p">],</span><span class="w"> </span><span class="err">\</span><span class="p">[</span><span class="n">Pi</span><span class="p">]</span><span class="o">/</span><span class="mi">30</span><span class="p">}]</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">N</span><span class="p">];</span><span class="w">
-</span></span></span></code></pre></div><img src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/master/images/SHOTraining.png" alt="image" />
+</span></span></span></code></pre></div><p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="../sphere.png" alt="Image of a sphere" />
+      
+    </figure>
+  
+
+</p>
+<img src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/master/images/SHOTraining.png" alt="image" />
 <p><strong>Now</strong>, construct a neural network with <em><strong><a href="https://reference.wolfram.com/language/ref/NetChain.html">NetChain</a></strong></em>. I chose a NN with 5 hidden layers, and 1 input/output layer respectively. The model uses different types of <em><strong><a href="https://reference.wolfram.com/language/ref/ElementwiseLayer.html">ElementwiseLayer</a></strong></em>, such as <em>IntegerParts</em>, <em>Tanh</em>, and <em>LogisticSigmoid</em>, to train the network. I found that this was best for convergence.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NetChain</span><span class="p">[{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="n">Tanh</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="n">LogisticSigmoid</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}]</span><span class="w">
 </span></span></span></code></pre></div><p>The five entries provided in NetChain define functions only on the hidden layer. <strong>Finally</strong>, we can train the model with NetTrain.</p>
@@ -484,10 +498,14 @@
 
 
 
-  <figure>
-    <img class="my-0 rounded-md" src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/master/images/NNvsExact.png" alt="NNvsExact" />
-    
-  </figure>
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="NNvsExact" alt="NNvsExact" />
+      
+    </figure>
+  
 
 </p>
 <p>Although the neural networks performs a good fit when trained, it has  <em><strong>not learned any physics</strong></em> in any meaningful way. So for now, it seems a young theoretical physicist can still beat a well trained neural network. But this result brings up a natural question, <em><strong>can we do better using Mathematica architecture?</strong></em></p>
@@ -495,7 +513,6 @@
 <p>It turns out the answer is no, see <a href="https://community.wolfram.com/groups/-/m/t/2446710">here</a> for a more extensive discussion.</p>
 </blockquote>
 <p>The goal of <em><strong>Part II</strong></em> is to reproduce Ben&rsquo;s calculation in Physics-Informed Neural Networks by writing better neural networks which incorporates a regularization scheme where the equation of motion is simultaneously minimized along with a cost function.</p>
-<p>{{ template &ldquo;_internal/disqus.html&rdquo; . }}</p>
 
       </div>
     </section>
