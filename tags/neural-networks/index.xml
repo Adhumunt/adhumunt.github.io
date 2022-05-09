@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neural Networks on Think. Learn. Repeat.</title>
+    <link>https://dhuality.com/tags/neural-networks/</link>
+    <description>Recent content in Neural Networks on Think. Learn. Repeat.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 May 2022 10:00:53 -0700</lastBuildDate><atom:link href="https://dhuality.com/tags/neural-networks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Chaos With Neural Networks II</title>
+      <link>https://dhuality.com/posts/2022-05-04-learning-chaos-with-nn-ii/</link>
+      <pubDate>Sun, 08 May 2022 10:00:53 -0700</pubDate>
+      
+      <guid>https://dhuality.com/posts/2022-05-04-learning-chaos-with-nn-ii/</guid>
+      <description>I have a soft spot for studying chaotic systems.</description>
+    </item>
+    
+  </channel>
+</rss>

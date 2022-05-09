@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Think. Learn. Repeat.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dhuality.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 May 2022 10:00:53 -0700</lastBuildDate><atom:link href="https://dhuality.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Chaos With Neural Networks II</title>
+      <link>https://dhuality.com/posts/2022-05-04-learning-chaos-with-nn-ii/</link>
+      <pubDate>Sun, 08 May 2022 10:00:53 -0700</pubDate>
+      
+      <guid>https://dhuality.com/posts/2022-05-04-learning-chaos-with-nn-ii/</guid>
+      <description>I have a soft spot for studying chaotic systems.</description>
+    </item>
+    
     <item>
       <title>Physical Neural Networks - The Harmonic Oscillator, Part I</title>
       <link>https://dhuality.com/posts/2022-04-20-physical-neural-networks---the-harmonic-oscillator/</link>
