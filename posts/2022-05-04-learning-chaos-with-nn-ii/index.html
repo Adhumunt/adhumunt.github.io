@@ -900,25 +900,10 @@ $$</p>
 
 
 
-  
-  
+  <figure>
+    <img class="my-0 rounded-md" src="https://github.com/Adhumunt/Blog/blob/main/Dhuality/assets/img/chaospinn.gif" alt="Chaos PINN" />
     
-  
-  
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        srcset="
-          /img/chaospinn_huee1fa758e4f1259ff65d8abdd7f01709_12051533_330x0_resize_box.gif 330w,
-          /img/chaospinn_huee1fa758e4f1259ff65d8abdd7f01709_12051533_660x0_resize_box.gif 660w,
-          /img/chaospinn_huee1fa758e4f1259ff65d8abdd7f01709_12051533_1024x0_resize_box.gif 1024w,
-          /img/chaospinn_huee1fa758e4f1259ff65d8abdd7f01709_12051533_1320x0_resize_box.gif 2x"
-        src="/img/chaospinn_huee1fa758e4f1259ff65d8abdd7f01709_12051533_660x0_resize_box.gif"
-        alt="Chaos PINN"
-      />
-      
-    </figure>
-  
+  </figure>
 
 </p>
 <p>The NN predicts the solution over the domain $t\in(0,1)$ which is well beyond the training data. Outside the domain, however, the NN fails to understand the chaotic behavior and is the prediction comparable to an ordinary neural network.</p>
@@ -927,25 +912,10 @@ $$</p>
 
 
 
-  
-  
+  <figure>
+    <img class="my-0 rounded-md" src="https://github.com/Adhumunt/Blog/blob/main/Dhuality/assets/img/chaospinn2.gif" alt="Chaos PINN on Larger Domain" />
     
-  
-  
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        srcset="
-          /img/chaospinn2_hu161536610d049251ff13cd98d5fd50eb_12764960_330x0_resize_box.gif 330w,
-          /img/chaospinn2_hu161536610d049251ff13cd98d5fd50eb_12764960_660x0_resize_box.gif 660w,
-          /img/chaospinn2_hu161536610d049251ff13cd98d5fd50eb_12764960_1024x0_resize_box.gif 1024w,
-          /img/chaospinn2_hu161536610d049251ff13cd98d5fd50eb_12764960_1320x0_resize_box.gif 2x"
-        src="/img/chaospinn2_hu161536610d049251ff13cd98d5fd50eb_12764960_660x0_resize_box.gif"
-        alt="Chaos PINN on Larger Domain"
-      />
-      
-    </figure>
-  
+  </figure>
 
 </p>
 <p>Clearly, the NN appears to do better when extending $f_{\rm reg}$ on a larger domain. One downside, however, is that this is computationally expensive. Performing $10^{5}$ iterations took me around 5 minutes to complete on my mid 2015 MBP. Ideally, PINN&rsquo;s should be implemented on systems capable of handling MPI or multithreading to reduce the computational cost.</p>
