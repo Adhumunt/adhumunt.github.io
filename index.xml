@@ -6,7 +6,16 @@
     <description>Recent content in Hi! I&#39;m Aditya on Think. Learn. Repeat.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 May 2022 10:00:53 -0700</lastBuildDate><atom:link href="https://dhuality.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Jul 2022 13:40:04 -0400</lastBuildDate><atom:link href="https://dhuality.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Information Loss via Ricci Flow</title>
+      <link>https://dhuality.com/posts/2022-07-05-information-loss-via-ricci-flow/</link>
+      <pubDate>Tue, 05 Jul 2022 13:40:04 -0400</pubDate>
+      
+      <guid>https://dhuality.com/posts/2022-07-05-information-loss-via-ricci-flow/</guid>
+      <description>When I was in New York City for the Quarks2Cosmos APS April Meeting this year, I was chatting with some friends about black hole evaporation, where black holes evaporate away due to quantum effects near their apparent horizon thereby violating unitarity in quantum mechanics.</description>
+    </item>
+    
     <item>
       <title>Learning Chaos With Neural Networks II</title>
       <link>https://dhuality.com/posts/2022-05-04-learning-chaos-with-nn-ii/</link>
@@ -40,7 +49,7 @@
       <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dhuality.com/posts/2022-02-07-entanglement-entropy/</guid>
-      <description>document.</description>
+      <description>The entanglement entropy is a measure of how quantum information is stored in a quantum state.</description>
     </item>
     
     <item>

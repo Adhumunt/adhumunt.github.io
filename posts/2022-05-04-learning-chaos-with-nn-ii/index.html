@@ -41,7 +41,7 @@
   />
   
   
-  <script type="text/javascript" src="/js/appearance.min.12e98742cd283574d030a7fe55f29597df4ee214f7ff7075b4d19a64d046a602753c715295550be7899b661619cec89c679049d36c624681671a8013c1249896.js" integrity="sha512-EumHQs0oNXTQMKf&#43;VfKVl99O4hT3/3B1tNGaZNBGpgJ1PHFSlVUL54mbZhYZzsicZ5BJ02xiRoFnGoATwSSYlg=="></script>
+  <script type="text/javascript" src="/js/appearance.min.badab316c9287a5a42a843e4eb45da65bb3d194a5a0f5fa4a3e516160e67df0b8c65f4f19a8e146436e29d583699e6cb41d6bbe99e05e1dbaa877763bad9f8e2.js" integrity="sha512-utqzFskoelpCqEPk60XaZbs9GUpaD1&#43;ko&#43;UWFg5n3wuMZfTxmo4UZDbinVg2mebLQda76Z4F4duqh3djutn44g=="></script>
   
     
     
@@ -53,7 +53,7 @@
   
   
     
-    <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.ae2ecb995505e39b73a72ec79bb2caee18a60721c58721805c701f2991d05e448c16d6843591b5b1ce459e8db4fc493891f1d0ac37be9ec8f9bcca812680b493.js" integrity="sha512-ri7LmVUF45tzpy7Hm7LK7himByHFhyGAXHAfKZHQXkSMFtaENZG1sc5Fno20/Ek4kfHQrDe&#43;nsj5vMqBJoC0kw==" data-copy="Copy" data-copied="Copied"></script>
+    <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.320e9d18732f8483248bd9a4e34269c64457da85f229f15f954f0334d950f968341a3d1d7d2c65612c4d5bf35d70ea8094be667fca7c7823f135ac6b80fc1ee6.js" integrity="sha512-Mg6dGHMvhIMki9mk40JpxkRX2oXyKfFflU8DNNlQ&#43;Wg0Gj0dfSxlYSxNW/NdcOqAlL5mf8p8eCPxNaxrgPwe5g==" data-copy="Copy" data-copied="Copied"></script>
   
   
   
@@ -112,7 +112,7 @@
 
   
   
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.101.0" />
   
   
   <meta name="author" content="Aditya Dhumuntarao" />
@@ -946,14 +946,14 @@ $$</p>
 <p>Clearly, the NN appears to do better when extending $f_{\rm reg}$ on a larger domain. One downside, however, is that this is computationally expensive. Performing $10^{5}$ iterations took me around 5 minutes to complete on my mid 2015 MBP. Ideally, PINN&rsquo;s should be implemented on systems capable of handling MPI or multithreading to reduce the computational cost.</p>
 <h2 id="conclusions" class="relative group">Conclusions <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#conclusions" aria-label="Anchor">#</a></span></h2>
 <p>It is possible to learn chaos with neural networks by implementing the PINN architecture. Although I studied this problem for a toy model, I suspect that one can extend this procedure to more complicated, realistic systems. However, it should be noted that the computation time scales with the system&rsquo;s complexity (i.e., for PDEs rather than ODEs, or for larger time domains, etc.). Hence, there is an art to implementing PINNs in general and this architecture should be supplemented with additional algorithms to reduce computational time.</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>S. H. Strogatz, Nonlinear Dynamics $\textit{\&amp;}$​ Chaos.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
       </div>
     </section>
@@ -1085,6 +1085,28 @@ $$</p>
           
         </span>
         <span>
+          
+            <a class="flex text-right group" href="/posts/2022-07-05-information-loss-via-ricci-flow/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Information Loss via Ricci Flow</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2022-07-05 13:40:04 -0400 EDT">5 July 2022</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 ltr:hidden rtl:inline text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>
