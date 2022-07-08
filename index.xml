@@ -8,6 +8,15 @@
     <language>en</language>
     <lastBuildDate>Tue, 05 Jul 2022 13:40:04 -0400</lastBuildDate><atom:link href="https://dhuality.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Research</title>
+      <link>https://dhuality.com/research/</link>
+      <pubDate>Fri, 08 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dhuality.com/research/</guid>
+      <description>As a research scientist, I&amp;rsquo;m currently interested in theoretical aspects of gravity and quantum information science; particularly on how quantum computers can be benchmarked using quantum gravity.</description>
+    </item>
+    
+    <item>
       <title>Information Loss via Ricci Flow</title>
       <link>https://dhuality.com/posts/2022-07-05-information-loss-via-ricci-flow/</link>
       <pubDate>Tue, 05 Jul 2022 13:40:04 -0400</pubDate>
@@ -31,7 +40,7 @@
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dhuality.com/about/</guid>
-      <description>I am an NSF Graduate Research Fellow and a DDF Fellow at the University of Minnesota.</description>
+      <description>I&amp;rsquo;m Aditya; an NSF Graduate Research Fellow and a DDF Fellow at the University of Minnesota.</description>
     </item>
     
     <item>
