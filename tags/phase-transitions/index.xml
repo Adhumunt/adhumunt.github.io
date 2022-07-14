@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phase Transitions on Think. Learn. Repeat.</title>
+    <link>https://dhuality.com/tags/phase-transitions/</link>
+    <description>Recent content in Phase Transitions on Think. Learn. Repeat.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 14 Jul 2022 15:13:57 -0400</lastBuildDate><atom:link href="https://dhuality.com/tags/phase-transitions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Encoding the $2d$ Ising Model onto $1d$ Qubit Chains</title>
+      <link>https://dhuality.com/posts/2022-07-04-encoding-classical-ising/</link>
+      <pubDate>Thu, 14 Jul 2022 15:13:57 -0400</pubDate>
+      
+      <guid>https://dhuality.com/posts/2022-07-04-encoding-classical-ising/</guid>
+      <description>The $2d$ Ising model is perhaps the most well recognized model in condensed matter and statistical physics and described by the Hamiltonian $$ H = -\sum_{\langle i,j\rangle}\tilde{J}_{ij}S_i S_j $$</description>
+    </item>
+    
+  </channel>
+</rss>
