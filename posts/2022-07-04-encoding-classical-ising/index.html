@@ -1583,6 +1583,16 @@ $$
 $$</p>
 <h2 id="encoding-the-2d-classical-ising-model-onto-qubit-chains" class="relative group">Encoding the $2d$ Classical Ising Model onto Qubit Chains <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#encoding-the-2d-classical-ising-model-onto-qubit-chains" aria-label="Anchor">#</a></span></h2>
 <p>The calculations for the $2d/1d$ are somewhat involved but can be found in several resources (see here<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>). The main idea can be more effectively communicated in the following graphic</p>
+<p>
+
+
+
+  <figure>
+    <img class="my-0 rounded-md" src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/main/img/I2Q.gif" alt="Ising2Qubit" />
+    
+  </figure>
+
+</p>
 <p>Essentially, one takes the spins on each Euclidean timeline of the lattice and maps these states onto a single qubit. By repeating this process, the qubits form a chain with the interactions along the $x$ direction provided by the coupling strength $K_x$ as seen in the $2d$ Ising Hamiltonian
 $$
 H _{2d\textrm{ Ising}}= \sum _{\langle i,j\rangle} K _x S _j(i)S _{j+1}(i)+ K _\tau S _j(i)S _j(i+1)
