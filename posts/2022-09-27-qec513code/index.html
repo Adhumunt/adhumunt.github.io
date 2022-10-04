@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="false"
+><head>
+  <meta charset="utf-8" />
+  
+    <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>The [[5,1,3]] Stabilizer Code &middot; Think. Learn. Repeat.</title>
+    <meta name="title" content="The [[5,1,3]] Stabilizer Code &middot; Think. Learn. Repeat." />
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://dhuality.com/posts/2022-09-27-qec513code/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.0d9d0fba86b07cfcc936cd7c0fea36e29b4aab66bd9e45c12ecebcd275619b113b57a1fe895c9764028bba8d3f9b5b07d6801821893d41eeb8e202b6773353f7.css"
+    integrity="sha512-DZ0PuoawfPzJNs18D&#43;o24ptKq2a9nkXBLs680nVhmxE7V6H&#43;iVyXZAKLuo0/m1sH1oAYIYk9Qe644gK2dzNT9w=="
+  />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.badab316c9287a5a42a843e4eb45da65bb3d194a5a0f5fa4a3e516160e67df0b8c65f4f19a8e146436e29d583699e6cb41d6bbe99e05e1dbaa877763bad9f8e2.js" integrity="sha512-utqzFskoelpCqEPk60XaZbs9GUpaD1&#43;ko&#43;UWFg5n3wuMZfTxmo4UZDbinVg2mebLQda76Z4F4duqh3djutn44g=="></script>
+  
+    
+    
+    
+  
+  
+    
+    
+  
+  
+    
+    <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.320e9d18732f8483248bd9a4e34269c64457da85f229f15f954f0334d950f968341a3d1d7d2c65612c4d5bf35d70ea8094be667fca7c7823f135ac6b80fc1ee6.js" integrity="sha512-Mg6dGHMvhIMki9mk40JpxkRX2oXyKfFflU8DNNlQ&#43;Wg0Gj0dfSxlYSxNW/NdcOqAlL5mf8p8eCPxNaxrgPwe5g==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="The [[5,1,3]] Stabilizer Code" />
+<meta property="og:description" content="Here&#39;s how to build a [[5,1,3]] Quantum Error Correcting code in Mathematica." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dhuality.com/posts/2022-09-27-qec513code/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-27T12:10:58-04:00" />
+<meta property="article:modified_time" content="2022-09-27T12:10:58-04:00" /><meta property="og:site_name" content="Think. Learn. Repeat." />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The [[5,1,3]] Stabilizer Code"/>
+<meta name="twitter:description" content="Here&#39;s how to build a [[5,1,3]] Quantum Error Correcting code in Mathematica."/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "The [[5,1,3]] Stabilizer Code",
+    "headline": "The [[5,1,3]] Stabilizer Code",
+    "description": "Here\u0027s how to build a [[5,1,3]] Quantum Error Correcting code in Mathematica.",
+    "abstract": "Quantum computers built with physical qubits are susceptible to propagation of error due to either decoherence, thermal, or other quantum noise thereby lowering the trust in the computational output.",
+    "inLanguage": "en",
+    "url" : "https:\/\/dhuality.com\/posts\/2022-09-27-qec513code\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Aditya Dhumuntarao"
+    },
+    "copyrightYear": "2022",
+    "dateCreated": "2022-09-27T12:10:58-04:00",
+    "datePublished": "2022-09-27T12:10:58-04:00",
+    
+    "dateModified": "2022-09-27T12:10:58-04:00",
+    
+    "keywords": ["Quantum Error Correcting Code"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "554"
+  }]
+  </script>
+
+
+  
+  
+    <meta name="generator" content="Hugo 0.101.0" />
+  
+  
+  <meta name="author" content="Aditya Dhumuntarao" />
+  
+    
+      <link href="https://github.com/adhumunt" rel="me" />
+    
+      <link href="https://www.linkedin.com/in/aditya-dhumuntarao/e" rel="me" />
+    
+      <link href="https://www.youtube.com/channel/UCPE_NxNQa3OAJqK6Omz9mTQ" rel="me" />
+    
+  
+  
+  
+
+
+
+
+  
+  
+  <link
+    type="text/css" rel="stylesheet"
+    href="/lib/katex/katex.min.d3b6210b73f8fef4b91dd806b8d000788c5be5e7bffde7e044da3900674cb6a14150f60e7501bfb032b4365e6a36af7891d124fcfbeef2998de066147ae71493.css"
+    integrity="sha512-07YhC3P4/vS5HdgGuNAAeIxb5ee//efgRNo5AGdMtqFBUPYOdQG/sDK0Nl5qNq94kdEk/Pvu8pmN4GYUeucUkw=="
+  />
+  
+  
+  <script defer src="/lib/katex/katex.min.68c0e216cac45772b3027f441f0c81452ef2d403e3656b7f67fef7ba42cdd826b629c186ce53901504a77ce76711c7a1a7031a43c79d94307fd1c317d86b076e.js" integrity="sha512-aMDiFsrEV3KzAn9EHwyBRS7y1APjZWt/Z/73ukLN2Ca2KcGGzlOQFQSnfOdnEcehpwMaQ8edlDB/0cMX2GsHbg=="></script>
+  
+  
+  <script defer src="/lib/katex/auto-render.min.640fd13eb028f3c0e5c119e7a0d56a28836740d716111cd12b4dcf0da038188262559bc61485906dd582b1479b3197e45a88677e782c0e35f353a3e890ee231b.js" integrity="sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==" onload="renderMathInElement(document.body);"></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+  
+  
+  
+  
+
+
+ 
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5LJSLC3KH"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-B5LJSLC3KH');
+   gtag('config', 'UA-219973332-2');
+ </script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+   
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5LJSLC3KH"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+ 
+     gtag('config', 'G-B5LJSLC3KH');
+     gtag('config', 'UA-219973332-2');
+   </script>
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 bg-neutral text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral max-w-7xl"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 dark:bg-neutral-600 focus:translate-y-0"
+        href="#main-content"
+        ><span class="font-bold ltr:pr-2 rtl:pl-2 text-primary-600 dark:text-primary-400"
+          >&darr;</span
+        >Skip to main content</a
+      >
+    </div><header
+  class="flex justify-between py-6 font-semibold sm:items-center sm:py-10 text-neutral-900 dark:text-neutral print:hidden"
+>
+  
+  <div>
+    
+      
+        <a href="/">
+          <img
+            src="/img/logo.png"
+            width="1200"
+            height="1200"
+            class="max-w-[10rem] max-h-[10rem] object-scale-down object-left"
+            alt="Think. Learn. Repeat."
+          />
+        </a>
+      
+    
+    
+
+  </div>
+  
+  
+    <nav>
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/posts/"
+              title="Posts"
+              >Posts</a
+            >
+          </li>
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/about/"
+              title="👋🏽 Welcome!"
+              >About</a
+            >
+          </li>
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/research/"
+              title="Research"
+              >Research</a
+            >
+          </li>
+        
+        
+          <li
+            class="ltr:text-right rtl:text-left ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <button
+              id="search-button"
+              class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+              title="Search (/)"
+            >
+              
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+          </li>
+        
+      </ul>
+    </nav>
+  
+</header>
+<main id="main-content" class="relative grow">
+  <article>
+    <header class="max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        The [[5,1,3]] Stabilizer Code
+      </h1>
+      <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2022-09-27 12:10:58 -0400 EDT">27 September 2022</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+    <div class="my-1 text-xs text-neutral-500 dark:text-neutral-400 ">
+      
+        
+      
+        
+          
+            <a
+              href="/tags/quantum-error-correcting-code/"
+              class="px-1 py-[1px] border rounded-md border-neutral-200 dark:border-neutral-600 hover:border-primary-300 hover:text-primary-700 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Quantum Error Correcting Code</a
+            >
+          
+        
+      
+    </div>
+  
+
+
+      </div>
+    </header>
+    <section class="flex flex-col max-w-full mt-0 prose lg:flex-row dark:prose-invert">
+      
+      <div class="min-w-0 min-h-0 max-w-prose">
+        <p>
+
+
+
+  <figure>
+    <img class="my-0 rounded-md" src="https://upload.wikimedia.org/wikipedia/commons/7/74/Five_qubit_code_stabilizer_measurement_circuit.png" alt="5 QECC" />
+    
+  </figure>
+
+</p>
+<p>Quantum computers built with physical qubits are susceptible to propagation of error due to either decoherence, thermal, or other quantum noise thereby lowering the trust in the computational output. One clever (but computationally expensive) way around this is to devise special codes which not only produce high fidelity results even if a few errors accumulate but also have a clear syndrome which encodes the type of error that occurred and its location.</p>
+<p>One such famous code is the <a href="https://en.wikipedia.org/wiki/Five-qubit_error_correcting_code">five qubit error correcting code</a>. In this code, five physical qubits are arranged in such a way that they encode a single <a href="https://en.wikipedia.org/wiki/Physical_and_logical_qubits">logical qubit</a> $|\psi\rangle$. Then any single qubit error, such as a bit or phase flip error, does not disturb (much) the logical information stored in $|\psi\rangle$. Furthermore, there is a clear diagnostic, namely the syndrome, which can be extracted from the code and used to determine <strong>what</strong> the error type is and <strong>where</strong> the error occurred in order to correct it. In this way, the five qubit error correcting code protects a single logical qubit from any single physical qubit error.</p>
+<p>To be more concrete, let&rsquo;s code up the $[[5,1,3]]$ stabilizer code in Mathematica. The circuit is split into two parts; the top four registers are ancillas where as the bottom register $|\psi\rangle$ is the logical qubit. The gate set $(H,X,Z,I)$  are the usual Hadamard, Pauli X and Z, and the identity.  The generators $\mathcal{G}$ are given by cyclic permutations of the following stabilizer $S = (XZZXI)$, i.e.,
+$$
+\mathcal{G} = (XZZXI, IXZZX, XIXZZ, ZXIXZ)
+$$
+and the logical operators are $\bar{X}=XXXXX$ and $\bar{Z}=ZZZZZ$. The fifth cyclic permutation is omitted since it can be expressed as a linear combination of the other generators. In Mathematica, set</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Identity</span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>then the stabilizer set is given by</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">Stabilizers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Table</span><span class="p">[</span><span class="n">RotateRight</span><span class="p">[</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Length</span><span class="p">[</span><span class="n">S1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">}]</span><span class="w">
+</span></span></span></code></pre></div><p>These stabilizers are encoded into the registers associated with the logical qubits and are linked correspondingly to the ancilla. If an error occurs in the logical qubit, say an $X$ error on the first register in $|\psi\rangle$ corresponding to the error operator $E_X=XIIII$, then one can check that $[E_X,\mathcal{G}_ a] \propto \delta_{a4}$ implying that the error commutes with all stabilizers except for $ZXIXZ$. Hence, the corresponding syndrome associated with this error will be $0001$. To <strong>correct</strong> this error, we simply need to apply another $E_X$ to the same register.</p>
+<p>To introduce these stabilizers at the appropriate site location within the logical qubit and to link appropriately with the ancilla, assign to each qubit an index $i=1,\cdots,9$. Then the site locations are given by</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">Sites</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Partition</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">SortBy</span><span class="p">[</span><span class="n">Flatten</span><span class="p">[</span><span class="n">Table</span><span class="p">[{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">}],</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">Total</span><span class="p">],</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="mi">5</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></div><p>Now, we are ready to design the circuit.  We do this as follows. The top four registers are acted upon a Hadamard. Then the full set of stabilizers are encoded into the register corresponding to the logical qubit at the site locations described above. The last step is to again act on the ancillas with Hadamards and then measure to see if any errors have occurred. The circuit is shown below!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">QECC5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Flatten</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">Join</span><span class="p">[</span><span class="n">Table</span><span class="p">[</span><span class="n">QuantumOperator</span><span class="p">[</span><span class="s">&#34;Hadamard&#34;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">}],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">}],</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Table</span><span class="p">[</span><span class="n">Table</span><span class="p">[(</span><span class="n">QuantumOperator</span><span class="p">[{</span><span class="s">&#34;Controlled&#34;</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="n">ToString</span><span class="p">[</span><span class="n">Stabilizers</span><span class="p">[[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]]]},</span><span class="w"> </span><span class="n">Sites</span><span class="p">[[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]]]),</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">Length</span><span class="p">[</span><span class="n">Stabilizers</span><span class="p">[[</span><span class="mi">1</span><span class="p">]]]}],</span><span class="w"> </span><span class="p">{</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">Length</span><span class="p">[</span><span class="n">Sites</span><span class="p">]}],</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Table</span><span class="p">[</span><span class="n">QuantumOperator</span><span class="p">[</span><span class="s">&#34;Hadamard&#34;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">}],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">}],</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Table</span><span class="p">[</span><span class="n">QuantumMeasurementOperator</span><span class="p">[{</span><span class="n">i</span><span class="p">}],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">}]]];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Show</span><span class="p">[</span><span class="n">QuantumCircuitOperator</span><span class="p">[</span><span class="n">QECC5</span><span class="p">][</span><span class="s">&#34;Diagram&#34;</span><span class="p">],</span><span class="w"> </span><span class="n">ImageSize</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Full</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></div><p>
+
+
+
+  <figure>
+    <img class="my-0 rounded-md" src="https://raw.githubusercontent.com/Adhumunt/adhumunt.github.io/main/img/5QQEC.png" alt="5 Qubit Code" />
+    
+  </figure>
+
+</p>
+<p>The complete Mathematica notebook can be found <a href="https://github.com/Adhumunt/QIMLAI/tree/main/Mathematica/ErrorCorrectingCodes">here</a>.</p>
+
+      </div>
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  <div class="flex">
+    
+      
+      
+        
+        <img
+          class="w-24 h-24 !mt-0 !mb-0 ltr:mr-4 rtl:ml-4 rounded-full"
+          width="96"
+          height="96"
+          alt="Author"
+          src="/img/author_huff0b00eca8c3318fa484a8d90a36e021_7613926_192x192_fill_box_smart1_3.png"
+        />
+      
+    
+    <div class="place-self-center">
+      
+        <div class="text-[0.6rem] leading-3 text-neutral-500 dark:text-neutral-400 uppercase">
+          Author
+        </div>
+        <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+          Aditya Dhumuntarao
+        </div>
+      
+      
+        <div class="text-sm text-neutral-700 dark:text-neutral-400">NSF Graduate Research Fellow at UMN</div>
+      
+      <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/adhumunt"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/aditya-dhumuntarao/e"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.youtube.com/channel/UCPE_NxNQa3OAJqK6Omz9mTQ"
+          target="_blank"
+          aria-label="Youtube"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+  </div>
+
+</div>
+    </div>
+  </div>
+
+
+      
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group" href="/posts/2022-07-04-encoding-classical-ising/">
+              <span
+                class="mr-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 ltr:hidden rtl:inline text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Encoding the $2d$ Ising Model onto $1d$ Qubit Chains</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2022-07-14 15:13:57 -0400 EDT">14 July 2022</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    </footer>
+    
+      <script src="https://utteranc.es/client.js"
+        repo="adhumunt/adhumunt.github.io"
+        issue-term="pathname"
+        label="Chats"
+        theme="boxy-light"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+  </article>
+
+      
+        <div
+          class="absolute top-[110vh] ltr:right-0 rtl:left-0 w-12 pointer-events-none bottom-[-5.5rem]"
+        >
+          <a
+            href="#the-top"
+            class="w-12 h-12 sticky pointer-events-auto top-[calc(100vh-5rem)] bg-neutral/50 dark:bg-neutral-800/50 backdrop-blur rounded-full text-xl flex items-center justify-center text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400"
+            aria-label="Scroll to top"
+            title="Scroll to top"
+          >
+            &uarr;
+          </a>
+        </div>
+      
+    </main>
+    <div
+  id="search-wrapper"
+  class="fixed inset-0 z-50 flex flex-col p-4 sm:p-6 md:p-[10vh] lg:p-[12vh] w-screen h-screen cursor-default bg-neutral-500/50 backdrop-blur-sm dark:bg-neutral-900/50 invisible"
+  data-url="https://dhuality.com/"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg border-neutral-200 top-20 bg-neutral dark:bg-neutral-800 dark:border-neutral-700"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-transparent focus:outline-2"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+<footer class="py-10 print:hidden">
+  
+  
+  <div class="flex justify-between">
+    <div>
+      
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2022
+          Aditya Dhumuntarao
+      </p>
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    
+    
+      <div
+        class="text-sm cursor-pointer text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-14 rtl:ml-14"
+      >
+        <button
+          id="appearance-switcher"
+          class="w-12 h-12 "
+          type="button"
+          title="Switch to dark appearance"
+        >
+          <span class="inline dark:hidden">
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+</span>
+          <span class="hidden dark:inline">
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+</span>
+        </button>
+      </div>
+    
+  </div>
+  
+  
+</footer>
+</body>
+</html>

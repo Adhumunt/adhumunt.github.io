@@ -6,7 +6,16 @@
     <description>Recent content in Hi! I&#39;m Aditya on Think. Learn. Repeat.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Jul 2022 15:13:57 -0400</lastBuildDate><atom:link href="https://dhuality.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Sep 2022 12:10:58 -0400</lastBuildDate><atom:link href="https://dhuality.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The [[5,1,3]] Stabilizer Code</title>
+      <link>https://dhuality.com/posts/2022-09-27-qec513code/</link>
+      <pubDate>Tue, 27 Sep 2022 12:10:58 -0400</pubDate>
+      
+      <guid>https://dhuality.com/posts/2022-09-27-qec513code/</guid>
+      <description>Quantum computers built with physical qubits are susceptible to propagation of error due to either decoherence, thermal, or other quantum noise thereby lowering the trust in the computational output.</description>
+    </item>
+    
     <item>
       <title>Encoding the $2d$ Ising Model onto $1d$ Qubit Chains</title>
       <link>https://dhuality.com/posts/2022-07-04-encoding-classical-ising/</link>
